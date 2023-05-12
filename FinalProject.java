@@ -5,4 +5,7 @@ public class FinalProject {
     public FinalProject(){
 
     }
+    public void gameStart(){
+
+    }
 }
