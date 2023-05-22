@@ -6,5 +6,7 @@ public class Item {
         this.name = name;
         this.cost = cost;
     }
-
+    public String getName(){
+        return name;
+    }
 }
