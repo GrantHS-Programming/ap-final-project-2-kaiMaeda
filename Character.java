@@ -3,24 +3,27 @@ public class Character {
     String name;
     int money;
     int movement;
+    int trophy;
     Item[] inventory;
-    public Character(String name, int money, int movement, Item[] inventory) {
+    public Character(String name, int money, int movement, int trophy, Item[] inventory) {
         this.name = name;
         this.money = money;
         this.movement = movement;
+        this.trophy = trophy;
         this.inventory = inventory;
     }
     public int rollDice(Item[] inventory){
         Scanner myScanner = new Scanner(System.in);
-        int optionNum = 1;
+        int optionNum = 2;
+        System.out.println("Default: 1\n");
+        System.out.println();
         for (Item option : inventory)
         {
-            System.out.println(optionNum + ": " + option.getName());
-            System.out.println();
+            System.out.println(option.getName()+ ": " + optionNum + "\n");
             optionNum +=1;
         }
         myScanner.useDelimiter("\\n");
         int choice = myScanner.nextInt();
-        return (int) (Math.random() * inventory[choice].getMax()) + ;
+        return (int) (Math.random() * inventory[choice].getMax()) + .getMin;
     }
 }
