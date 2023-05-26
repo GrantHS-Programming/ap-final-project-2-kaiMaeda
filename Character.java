@@ -16,14 +16,17 @@ public class Character {
         Scanner myScanner = new Scanner(System.in);
         int optionNum = 2;
         System.out.println("Default: 1\n");
-        System.out.println();
         for (Item option : inventory)
         {
-            System.out.println(option.getName()+ ": " + optionNum + "\n");
-            optionNum +=1;
+            if (option instanceof Dice) {
+                System.out.println(option.getName() + ": " + optionNum + "\n");
+                optionNum += 1;
+            }
         }
         myScanner.useDelimiter("\\n");
         int choice = myScanner.nextInt();
-        return (int) (Math.random() * inventory[choice].getMax()) + .getMin;
+        if (inventory[choice] instanceof Dice){
+            return (int) (Math.random() * inventory[choice].getMax()) + inventory[choice].getMin();
+        }
     }
 }
