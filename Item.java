@@ -9,4 +9,12 @@ public class Item {
     public String getName(){
         return name;
     }
+    public int getMax(){
+        System.out.println("get max");
+        return cost + 1;
+    }
+    public int getMin(){
+        System.out.println("get max");
+        return cost;
+    }
 }

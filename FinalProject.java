@@ -24,17 +24,17 @@ public class FinalProject {
             Character cpu1 = new Character("CpuOne", 5, 0, 0, null);
             Character player3 = new Character("playerThree", 5, 0, 0, null);
             Character player2 = new Character("playerTwo", 5, 0, 0, null);
-            players[3] = player3;
-            players[2] = player2;
-            players[1] = cpu1;
+            players[3] = cpu1;
+            players[2] = player3;
+            players[1] = player2;
         }
         if (playerNum == 2){
             Character cpu1 = new Character("CpuOne", 5, 0, 0, null);
             Character cpu2 = new Character("CpuTwo", 5, 0, 0, null);
             Character player2 = new Character("playerTwo", 5, 0, 0, null);
-            players[3] = player2;
-            players[2] = cpu1;
-            players[1] = cpu2;
+            players[3] = cpu1;
+            players[2] = cpu2;
+            players[1] = player2;
         }
         if (playerNum == 1){
             Character cpu1 = new Character("CpuOne", 5, 0, 0, null);
@@ -46,5 +46,6 @@ public class FinalProject {
         }
         Character player1 = new Character("playerOne", 5, 0, 0, null);
         players[0] = player1;
+
     }
 }
