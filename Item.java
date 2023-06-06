@@ -17,4 +17,7 @@ public class Item {
         System.out.println("get max");
         return cost;
     }
+    public int getCost(){
+        return cost;
+    }
 }
