@@ -8,7 +8,7 @@ public class FinalProject {
         gameStart();
     }
     public void gameStart(){
-        Dice standard = new Dice("Default", 0, 10, 1);
+        Dice standard = new Dice("Default", 0, 10, 1, true);
         Scanner myScanner = new Scanner(System.in);
         System.out.println("How many players do you want from 1 to 4?");
         int playerNum = myScanner.nextInt();
@@ -54,12 +54,8 @@ public class FinalProject {
     }
     public void everyoneRoll(){
         players[0].rollDice(players[0].inventory);
-        System.out.println(players[0].getName() + " rolled a " + players[0].getDiceRoll());
         players[1].rollDice(players[1].inventory);
-        System.out.println(players[1].getName() + " rolled a " + players[1].getDiceRoll());
         players[2].rollDice(players[2].inventory);
-        System.out.println(players[2].getName() + " rolled a " + players[2].getDiceRoll());
         players[3].rollDice(players[3].inventory);
-        System.out.println(players[3].getName() + " rolled a " + players[3].getDiceRoll());
     }
 }

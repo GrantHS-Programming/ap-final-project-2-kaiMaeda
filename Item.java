@@ -1,10 +1,12 @@
 public class Item {
     private String name;
     private int cost;
+    private boolean standard;
 
-    public Item(String name, int cost) {
+    public Item(String name, int cost,  boolean standard) {
         this.name = name;
         this.cost = cost;
+        this.standard = standard;
     }
     public String getName(){
         return name;
@@ -20,4 +22,8 @@ public class Item {
     public int getCost(){
         return cost;
     }
+    public boolean getStandard(){
+        return standard;
+    }
+
 }
