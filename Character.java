@@ -49,13 +49,15 @@ public class Character {
                     } else {
                         while(inventory[choice - 1].getStandard() == true){
                             System.out.println("You can't replace standard");
-                            //add scanner
+                            myScanner.useDelimiter("\\n");
+                            choice = myScanner.nextInt();
                         }
                         System.out.println(getName() + " replaced " + inventory[choice - 1].getName());
                         inventory[choice - 1] = received;
                         System.out.print(" with " + received.getName());
                     }
-                } else {
+                }
+                else {
                     int choice = 0;
                     System.out.println(getName() + ", do you want to replace an item for " + received.getName());
                     int optionNum = 1;
@@ -109,5 +111,8 @@ public class Character {
         }
         diceRoll = (int) (Math.random() * inventory[choice - 1].getMax()) + inventory[choice - 1].getMin();
         System.out.println(getName() + " rolled a " + diceRoll);
+    }
+    public void movement(){
+
     }
 }

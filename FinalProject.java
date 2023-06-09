@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class FinalProject {
     Character[] players = new Character[4];
+    Tile[][] board = new Tile[10][10];
     public static void main(String[] args) {
         new FinalProject();
     }
@@ -8,6 +9,7 @@ public class FinalProject {
         gameStart();
     }
     public void gameStart(){
+
         Dice standard = new Dice("Default", 0, 10, 1, true);
         Scanner myScanner = new Scanner(System.in);
         System.out.println("How many players do you want from 1 to 4?");
@@ -51,11 +53,25 @@ public class FinalProject {
         players[2].recieveItem(players[2].inventory, standard);
         players[3].recieveItem(players[3].inventory, standard);
         everyoneRoll();
+
     }
     public void everyoneRoll(){
         players[0].rollDice(players[0].inventory);
         players[1].rollDice(players[1].inventory);
         players[2].rollDice(players[2].inventory);
         players[3].rollDice(players[3].inventory);
+    }
+    public int highestRoll(){
+        int highest = 0;
+        Character[] order = new Character[4];
+        for (Character rolled: players) {
+            if (rolled.getDiceRoll() > highest) {
+                highest = rolled.getDiceRoll();
+                order[0] = rolled;
+                //add if its not the highest so that it makes an order
+                System.out.println(highest);
+            }
+        }
+        return highest;
     }
 }
