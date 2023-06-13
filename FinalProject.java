@@ -61,17 +61,27 @@ public class FinalProject {
         players[2].rollDice(players[2].inventory);
         players[3].rollDice(players[3].inventory);
     }
-    public int highestRoll(){
+    public Character[] highestRoll(){
         int highest = 0;
         Character[] order = new Character[4];
         for (Character rolled: players) {
             if (rolled.getDiceRoll() > highest) {
                 highest = rolled.getDiceRoll();
                 order[0] = rolled;
-                //add if its not the highest so that it makes an order
                 System.out.println(highest);
             }
+            else if (rolled.getDiceRoll() > order[1].getDiceRoll()) {
+                order[2] = order[1];
+                order[1] = rolled;
+            }
+            else if (rolled.getDiceRoll() > order[2].getDiceRoll()){
+                order[3] = order[2];
+                order[2] = rolled;
+            }
+            else{
+                order[3] = rolled;
+            }
         }
-        return highest;
+        return order;
     }
 }
